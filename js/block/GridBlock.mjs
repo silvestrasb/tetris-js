@@ -12,7 +12,7 @@ export default class GridBlock extends Block {
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.fillRect(
-      this.position.collumn * grid.size + grid.position.x,
+      this.position.column * grid.size + grid.position.x,
       this.position.row * grid.size + grid.position.y,
       this.size,
       this.size

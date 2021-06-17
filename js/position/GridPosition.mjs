@@ -1,6 +1,6 @@
 export default class GridPosition {
-  constructor(row, collumn) {
+  constructor(row, column) {
     this.row = row;
-    this.collumn = collumn;
+    this.column = column;
   }  
 }
