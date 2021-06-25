@@ -1,7 +1,23 @@
+/** Abstract class. */
 export default class Block {
-  constructor(color, size, position) {
-    this.color = color;
-    this.size = size;
-    this.position = position;
+  constructor(coordinate, colorScheme) {
+    this.colorScheme = colorScheme;
+    this.coordinate = coordinate;
+  }
+
+  moveUp() {
+    this.coordinate.y--;
+  }
+
+  moveRight() {
+    this.coordinate.x++;
+  }
+
+  moveDown() {
+    this.coordinate.y++;
+  }
+
+  moveLeft() {
+    this.coordinate.x--;
   }
 }
