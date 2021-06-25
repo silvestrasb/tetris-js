@@ -1,13 +1,13 @@
 /* This is serves as an abstarct class. */
 export default class Tetrimino {
-  constructor(coordinate, tetrisBlocks) {
+  constructor(coordinate, blockList) {
     this.coordinate = coordinate;
-    this.tetrisBlocks = tetrisBlocks;
+    this.blockList = blockList;
   }
 
   // NOTE: NOT SURE IF THIS METHOD IS NECESSARY
   draw(ctx, grid) {
-    this.tetrisBlocks.forEach((block) => {
+    this.blockList.forEach((block) => {
       block.draw(ctx, grid);
     });
   }
@@ -26,7 +26,7 @@ export default class Tetrimino {
     // console.log(
     //   `Rotation coordinate: (${rotationCoordinate.x}, ${rotationCoordinate.y})`
     // );
-    // this.tetrisBlocks.forEach((block) => {
+    // this.blockList.forEach((block) => {
     //   const tempFlippedCoordinate = this._flipGridCoordinate(
     //     block.gridCoordinate,
     //     rotationCoordinate
@@ -38,21 +38,21 @@ export default class Tetrimino {
 
   moveDown() {
     this.coordinate.y++;
-    this.tetrisBlocks.forEach((block) => {
+    this.blockList.forEach((block) => {
       block.moveDown();
     });
   }
 
   moveRight() {
     this.coordinate.x++;
-    this.tetrisBlocks.forEach((block) => {
+    this.blockList.forEach((block) => {
       block.moveRight();
     });
   }
 
   moveLeft() {
     this.coordinate.x--;
-    this.tetrisBlocks.forEach((block) => {
+    this.blockList.forEach((block) => {
       block.moveLeft();
     });
   }
