@@ -1,4 +1,3 @@
-// TEMP: NEPAMIRŠK ŠITO IŠTRINTI
 import GridCoordinate from "./../../util/coordinate/GridCoordinate.mjs";
 
 /* This is serves as an abstarct class. */
@@ -8,12 +7,6 @@ export default class Tetrimino {
     this.center = new GridCoordinate(center.x ,center.y);
     this.coordinate = coordinate;
     this.blockList = blockList;
-  }
-
-  draw(ctx, grid) {
-    this.blockList.forEach((block) => {
-      block.draw(ctx, grid);
-    });
   }
 
   rotate() {
