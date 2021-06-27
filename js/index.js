@@ -121,9 +121,9 @@ function drawO() {
   oTetrimino.moveRight();
   oTetrimino.moveRight();
   oTetrimino.moveRight();
+  oTetrimino.moveRight();
   oTetrimino.rotate();
   oTetrimino.draw(ctx, grid);
-  oTetrimino.moveRight();
   oTetrimino.moveRight();
   oTetrimino.moveRight();
   oTetrimino.moveRight();
