@@ -18,67 +18,195 @@ const GAME_HEIGHT = canvas.height;
 const grid = new Grid(
   GAME_WIDTH,
   GAME_HEIGHT,
-  35,
+  21.875,
   new AbsoluteCoordinate(0, 0)
 );
 
-const iTetrimino = new ITetrimino(new GridCoordinate(3, 1));
-const jTetrimino = new JTetrimino(new GridCoordinate(3, 1));
-const lTetrimino = new LTetrimino(new GridCoordinate(3, 1));
-const oTetrimino = new OTetrimino(new GridCoordinate(3, 1));
-const sTetrimino = new STetrimino(new GridCoordinate(3, 1));
-const tTetrimino = new TTetrimino(new GridCoordinate(3, 1));
-const zTetrimino = new ZTetrimino(new GridCoordinate(3, 1));
+const iTetrimino = new ITetrimino(new GridCoordinate(0, 1));
+const jTetrimino = new JTetrimino(new GridCoordinate(0, 7));
+const lTetrimino = new LTetrimino(new GridCoordinate(0, 11));
+const oTetrimino = new OTetrimino(new GridCoordinate(0, 15));
+const sTetrimino = new STetrimino(new GridCoordinate(0, 19));
+const tTetrimino = new TTetrimino(new GridCoordinate(0, 23));
+const zTetrimino = new ZTetrimino(new GridCoordinate(0, 27));
 
-iTetrimino.moveLeft();
-iTetrimino.draw(ctx, grid);
+/* NOTE: These functions are temporary, and only for demonstration purposes. */
 
-jTetrimino.moveDown();
-jTetrimino.moveDown();
-jTetrimino.moveLeft();
-jTetrimino.moveLeft();
-jTetrimino.draw(ctx, grid);
+drawI();
+drawj();
+drawL();
+drawO();
+drawS();
+drawT();
+drawZ();
 
-lTetrimino.moveDown();
-lTetrimino.moveDown();
-lTetrimino.moveDown();
-lTetrimino.moveDown();
-lTetrimino.moveDown();
-lTetrimino.moveDown();
-lTetrimino.moveRight();
-lTetrimino.moveRight();
-lTetrimino.moveRight();
-lTetrimino.draw(ctx, grid);
 
-oTetrimino.moveRight();
-oTetrimino.moveRight();
-oTetrimino.moveDown();
-oTetrimino.moveDown();
-oTetrimino.moveDown();
-oTetrimino.moveDown();
-oTetrimino.draw(ctx, grid);
+function drawI() {
+  iTetrimino.moveDown();
+  iTetrimino.moveDown();
+  iTetrimino.draw(ctx, grid);
+  iTetrimino.moveRight();
+  iTetrimino.moveRight();
+  iTetrimino.moveRight();
+  iTetrimino.moveRight();
+  iTetrimino.rotate();
+  iTetrimino.draw(ctx, grid);
+  iTetrimino.moveRight();
+  iTetrimino.moveRight();
+  iTetrimino.moveRight();
+  iTetrimino.moveRight();
+  iTetrimino.moveRight();
+  iTetrimino.rotate();
+  iTetrimino.draw(ctx, grid);
+  iTetrimino.moveRight();
+  iTetrimino.moveRight();
+  iTetrimino.moveRight();
+  iTetrimino.moveRight();
+  iTetrimino.moveRight();
+  iTetrimino.rotate();
+  iTetrimino.draw(ctx, grid);
+}
 
-sTetrimino.moveDown();
-sTetrimino.moveDown();
-sTetrimino.moveDown();
-sTetrimino.moveDown();
-sTetrimino.moveDown();
-sTetrimino.moveLeft();
-sTetrimino.moveLeft();
-sTetrimino.draw(ctx, grid);
+function drawj() {
+  jTetrimino.draw(ctx, grid);
+  jTetrimino.moveRight();
+  jTetrimino.moveRight();
+  jTetrimino.moveRight();
+  jTetrimino.moveRight();
+  jTetrimino.rotate();
+  jTetrimino.draw(ctx, grid);
+  jTetrimino.moveRight();
+  jTetrimino.moveRight();
+  jTetrimino.moveRight();
+  jTetrimino.moveRight();
+  jTetrimino.moveRight();
+  jTetrimino.rotate();
+  jTetrimino.draw(ctx, grid);
+  jTetrimino.moveRight();
+  jTetrimino.moveRight();
+  jTetrimino.moveRight();
+  jTetrimino.moveRight();
+  jTetrimino.moveRight();
+  jTetrimino.rotate();
+  jTetrimino.draw(ctx, grid);
+}
 
-tTetrimino.moveRight();
-tTetrimino.moveRight();
-tTetrimino.moveRight();
-tTetrimino.moveDown();
-tTetrimino.draw(ctx, grid);
+function drawL() {
+  lTetrimino.draw(ctx, grid);
+  lTetrimino.moveRight();
+  lTetrimino.moveRight();
+  lTetrimino.moveRight();
+  lTetrimino.moveRight();
+  lTetrimino.rotate();
+  lTetrimino.draw(ctx, grid);
+  lTetrimino.moveRight();
+  lTetrimino.moveRight();
+  lTetrimino.moveRight();
+  lTetrimino.moveRight();
+  lTetrimino.moveRight();
+  lTetrimino.rotate();
+  lTetrimino.draw(ctx, grid);
+  lTetrimino.moveRight();
+  lTetrimino.moveRight();
+  lTetrimino.moveRight();
+  lTetrimino.moveRight();
+  lTetrimino.moveRight();
+  lTetrimino.rotate();
+  lTetrimino.draw(ctx, grid);
+}
 
-zTetrimino.moveDown();
-zTetrimino.moveDown();
-zTetrimino.moveDown();
-zTetrimino.moveDown();
-zTetrimino.moveDown();
-zTetrimino.moveDown();
-zTetrimino.moveDown();
-zTetrimino.moveDown();
-zTetrimino.draw(ctx, grid);
+function drawO() {
+  oTetrimino.draw(ctx, grid);
+  oTetrimino.moveRight();
+  oTetrimino.moveRight();
+  oTetrimino.moveRight();
+  oTetrimino.moveRight();
+  oTetrimino.rotate();
+  oTetrimino.draw(ctx, grid);
+  oTetrimino.moveRight();
+  oTetrimino.moveRight();
+  oTetrimino.moveRight();
+  oTetrimino.moveRight();
+  oTetrimino.moveRight();
+  oTetrimino.rotate();
+  oTetrimino.draw(ctx, grid);
+  oTetrimino.moveRight();
+  oTetrimino.moveRight();
+  oTetrimino.moveRight();
+  oTetrimino.moveRight();
+  oTetrimino.moveRight();
+  oTetrimino.rotate();
+  oTetrimino.draw(ctx, grid);
+}
+
+function drawS() {
+  sTetrimino.draw(ctx, grid);
+  sTetrimino.moveRight();
+  sTetrimino.moveRight();
+  sTetrimino.moveRight();
+  sTetrimino.moveRight();
+  sTetrimino.rotate();
+  sTetrimino.draw(ctx, grid);
+  sTetrimino.moveRight();
+  sTetrimino.moveRight();
+  sTetrimino.moveRight();
+  sTetrimino.moveRight();
+  sTetrimino.moveRight();
+  sTetrimino.rotate();
+  sTetrimino.draw(ctx, grid);
+  sTetrimino.moveRight();
+  sTetrimino.moveRight();
+  sTetrimino.moveRight();
+  sTetrimino.moveRight();
+  sTetrimino.moveRight();
+  sTetrimino.rotate();
+  sTetrimino.draw(ctx, grid);
+}
+
+function drawT() {
+  tTetrimino.draw(ctx, grid);
+  tTetrimino.moveRight();
+  tTetrimino.moveRight();
+  tTetrimino.moveRight();
+  tTetrimino.moveRight();
+  tTetrimino.rotate();
+  tTetrimino.draw(ctx, grid);
+  tTetrimino.moveRight();
+  tTetrimino.moveRight();
+  tTetrimino.moveRight();
+  tTetrimino.moveRight();
+  tTetrimino.moveRight();
+  tTetrimino.rotate();
+  tTetrimino.draw(ctx, grid);
+  tTetrimino.moveRight();
+  tTetrimino.moveRight();
+  tTetrimino.moveRight();
+  tTetrimino.moveRight();
+  tTetrimino.moveRight();
+  tTetrimino.rotate();
+  tTetrimino.draw(ctx, grid);
+}
+
+function drawZ() {
+  zTetrimino.draw(ctx, grid);
+  zTetrimino.moveRight();
+  zTetrimino.moveRight();
+  zTetrimino.moveRight();
+  zTetrimino.moveRight();
+  zTetrimino.rotate();
+  zTetrimino.draw(ctx, grid);
+  zTetrimino.moveRight();
+  zTetrimino.moveRight();
+  zTetrimino.moveRight();
+  zTetrimino.moveRight();
+  zTetrimino.moveRight();
+  zTetrimino.rotate();
+  zTetrimino.draw(ctx, grid);
+  zTetrimino.moveRight();
+  zTetrimino.moveRight();
+  zTetrimino.moveRight();
+  zTetrimino.moveRight();
+  zTetrimino.moveRight();
+  zTetrimino.rotate();
+  zTetrimino.draw(ctx, grid);
+}

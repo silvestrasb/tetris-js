@@ -1,42 +1,29 @@
+// TEMP: NEPAMIRŠK ŠITO IŠTRINTI
+import GridCoordinate from "./../../util/coordinate/GridCoordinate.mjs";
+
 /* This is serves as an abstarct class. */
 export default class Tetrimino {
-  constructor(coordinate, blockList) {
+  constructor(rotationSystem, coordinate, center, blockList) {
+    this.rotationSystem = rotationSystem === "COORDINATE" ? 1 : 0;
+    this.center = new GridCoordinate(center.x ,center.y);
     this.coordinate = coordinate;
     this.blockList = blockList;
   }
 
-  // NOTE: NOT SURE IF THIS METHOD IS NECESSARY
   draw(ctx, grid) {
     this.blockList.forEach((block) => {
       block.draw(ctx, grid);
     });
   }
 
-  // NOTE: NOT IMPLEMENTED YET
-  _flipGridCoordinate(gridCoordinate, axis) {}
-
-  // NOTE: NOT IMPLEMENTED YET
   rotate() {
-    // let rotationCoordinate = new GridCoordinate(6, 10);
-    // console.log(
-    //   `Tetrimino coordinate: (${this.coordinate.x}, ${this.coordinate.y})`
-    // );
-    // rotationCoordinate.x = this.coordinate.x + 2;
-    // rotationCoordinate.y = this.coordinate.y + 2;
-    // console.log(
-    //   `Rotation coordinate: (${rotationCoordinate.x}, ${rotationCoordinate.y})`
-    // );
-    // this.blockList.forEach((block) => {
-    //   const tempFlippedCoordinate = this._flipGridCoordinate(
-    //     block.gridCoordinate,
-    //     rotationCoordinate
-    //   );
-    //   block.gridCoordinate.x = tempFlippedCoordinate.x;
-    //   block.gridCoordinate.y = tempFlippedCoordinate.y;
-    // });
+    this.blockList.forEach((block) => {
+      block.rotate(this.center, this.rotationSystem);
+    });
   }
 
   moveDown() {
+    this.center.y++;
     this.coordinate.y++;
     this.blockList.forEach((block) => {
       block.moveDown();
@@ -44,6 +31,7 @@ export default class Tetrimino {
   }
 
   moveRight() {
+    this.center.x++;
     this.coordinate.x++;
     this.blockList.forEach((block) => {
       block.moveRight();
@@ -51,6 +39,7 @@ export default class Tetrimino {
   }
 
   moveLeft() {
+    this.center.x--;
     this.coordinate.x--;
     this.blockList.forEach((block) => {
       block.moveLeft();
