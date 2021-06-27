@@ -9,6 +9,7 @@ import STetrimino from "./entity/tetrimino/STetrimino.mjs";
 import TTetrimino from "./entity/tetrimino/TTetrimino.mjs";
 import ZTetrimino from "./entity/tetrimino/ZTetrimino.mjs";
 import TetrisDraw from "./UI/TetrisDraw.mjs";
+import BorderBlocks from "./border/BorderBlocks.mjs";
 
 
 const canvas = document.getElementById("gameScreen");
@@ -26,6 +27,8 @@ const grid = new Grid(
 
 const drawing = new TetrisDraw(grid);
 
+
+
 const iTetrimino = new ITetrimino(new GridCoordinate(0, 1));
 const jTetrimino = new JTetrimino(new GridCoordinate(0, 7));
 const lTetrimino = new LTetrimino(new GridCoordinate(0, 11));
@@ -34,14 +37,21 @@ const sTetrimino = new STetrimino(new GridCoordinate(0, 19));
 const tTetrimino = new TTetrimino(new GridCoordinate(0, 23));
 const zTetrimino = new ZTetrimino(new GridCoordinate(0, 27));
 
+const borderBlocks = new BorderBlocks(grid);
+
+
+
 /* NOTE: These functions are temporary, and only for demonstration purposes. */
-drawI();
-drawJ();
-drawL();
-drawO();
-drawS();
-drawT();
-drawZ();
+drawing.drawBlockList(borderBlocks, ctx);
+
+// drawI();
+// drawJ();
+// drawL();
+// drawO();
+// drawS();
+// drawT();
+// drawZ();
+
 
 function drawI() {
   iTetrimino.moveDown();
