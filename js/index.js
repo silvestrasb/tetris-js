@@ -34,6 +34,7 @@ const sTetrimino = new STetrimino(new GridCoordinate(0, 19));
 const tTetrimino = new TTetrimino(new GridCoordinate(0, 23));
 const zTetrimino = new ZTetrimino(new GridCoordinate(0, 27));
 
+/* NOTE: These functions are temporary, and only for demonstration purposes. */
 drawI();
 drawJ();
 drawL();
