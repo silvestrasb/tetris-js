@@ -1,9 +1,10 @@
 import GridCoordinate from "../coordinate/GridCoordinate.mjs";
 
 export default class Grid {
+  // TODO: RENAME absoluteCoordinate to coordinate.
   constructor(width, height, squareSize, absoluteCoordinate) {
-    this.rows = width / squareSize;
-    this.columns = height / squareSize;
+    this.rows = Math.floor(width / squareSize);
+    this.columns = Math.floor(height / squareSize);
     this.width = width;
     this.height = height;
     this.squareSize = squareSize;
