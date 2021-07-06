@@ -1,15 +1,13 @@
-// TODO: DRAWS GREY BORDER AROUND THE GAME AREA
 import TetrisBlock from "../entity/TetrisBlock.mjs";
-import Tetrimino from "../entity/tetrimino/Tetrimino.mjs";
 import GridCoordinate from "../util/coordinate/GridCoordinate.mjs";
 import BlockColorScheme from "../util/color/BlockColorScheme.mjs";
 
-export default class Border {
+export default class BorderBlocks {
   constructor(grid) {
     const colorScheme = new BlockColorScheme("#777777", "#d6d6d6", "#535353", "#232323", "#a0a0a0");
 
-    const blocksVertical = Math.floor(grid.height / grid.squareSize);
-    const blocksHorizontal = Math.floor(grid.width / grid.squareSize);
+    const blocksVertical = grid.columns;
+    const blocksHorizontal = grid.rows;
 
     this.blockList = [];
     
