@@ -5,7 +5,8 @@ import BlockColorScheme from "../../util/color/BlockColorScheme.mjs";
 
 export default class LTetrimino extends Tetrimino {
   constructor (coordinate) {
-    const colorScheme = new BlockColorScheme("#ff7700", "#ffd6b3", "#b25300", "#4c2300", "#ffa04d");
+    // The center color should be: #ff7700, I'm a bit colorblind, so I changed it to something more convenient
+    const colorScheme = new BlockColorScheme("#ffffff", "#ffd6b3", "#b25300", "#4c2300", "#ffa04d");
     const center = new GridCoordinate(coordinate.x + 1, coordinate.y + 1);
     super("BLOCK", coordinate, center,
     [

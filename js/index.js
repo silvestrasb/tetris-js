@@ -22,7 +22,7 @@ const grid = new Grid(
   new AbsoluteCoordinate(0, 0)
 );
 
-const iTetrimino = new ITetrimino(new GridCoordinate(0, 1));
+const iTetrimino = new ITetrimino(new GridCoordinate(0, 2));
 const jTetrimino = new JTetrimino(new GridCoordinate(0, 7));
 const lTetrimino = new LTetrimino(new GridCoordinate(0, 11));
 const oTetrimino = new OTetrimino(new GridCoordinate(0, 15));
@@ -42,7 +42,6 @@ drawZ();
 
 
 function drawI() {
-  iTetrimino.moveDown();
   iTetrimino.moveDown();
   iTetrimino.draw(ctx, grid);
   iTetrimino.moveRight();
