@@ -20,7 +20,7 @@ const _oTetrimino = new OTetrimino(new GridCoordinate(7, 3));
 
 function gameLoop() {
   console.log("- Clearing")
-  ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+  // ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
   console.log("- Drawing")
   _oTetrimino.draw(ctx, grid);
   window.requestAnimationFrame(gameLoop);
