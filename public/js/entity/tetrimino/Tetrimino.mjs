@@ -30,6 +30,15 @@ export default class Tetrimino {
     });
   }
 
+  // Temporary function for development demo purposes
+  moveUp() {
+    this.center.y--;
+    this.coordinate.y--;
+    this.blockList.forEach((block) => {
+      block.moveUp();
+    });
+  }
+
   moveRight() {
     this.center.x++;
     this.coordinate.x++;
