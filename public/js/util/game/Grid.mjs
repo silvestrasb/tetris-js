@@ -12,8 +12,8 @@ export default class Grid {
 
   toAbsolute(gridCoordinate) {
     return new GridCoordinate(
-      gridCoordinate.x * this.squareSize + this.absoluteCoordinate.x,
-      gridCoordinate.y * this.squareSize + this.absoluteCoordinate.y
+      gridCoordinate.x * this.squareSize,
+      gridCoordinate.y * this.squareSize
     );
   }
 }
