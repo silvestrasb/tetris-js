@@ -11,9 +11,12 @@ export default class PlayableTetrimino {
     this.direction;
   }
 
+  /**
+   * Moves @tetrimino accordingly to the key pressed by the user.
+   */
   move() {
     this.direction = this.pressedKey.getPressedKey();
-    switch (this.pressedKey.getPressedKey()) {
+    switch (this.direction) {
       case Direction.Up:
         this.tetrimino.moveUp();
         break;
@@ -28,6 +31,30 @@ export default class PlayableTetrimino {
 
       case Direction.Right:
         this.tetrimino.moveRight();
+        break;
+    }
+  }
+
+  /**
+   * Move to the opposite of the last direction of @tetrimino.
+   * 
+   */
+  undoMove() {
+    switch (this.direction) {
+      case Direction.Up:
+        this.tetrimino.moveDown();
+        break;
+
+      case Direction.Down:
+        this.tetrimino.moveUp();
+        break;
+
+      case Direction.Left:
+        this.tetrimino.moveRight();
+        break;
+
+      case Direction.Right:
+        this.tetrimino.moveLeft();
         break;
     }
   }
