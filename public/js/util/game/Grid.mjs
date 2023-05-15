@@ -1,5 +1,6 @@
 import GridCoordinate from "../coordinate/GridCoordinate.mjs";
 
+// TODO: Move this class to some other package
 export default class Grid {
   constructor(width, height, squareSize, absoluteCoordinate) {
     this.rows = width / squareSize;
