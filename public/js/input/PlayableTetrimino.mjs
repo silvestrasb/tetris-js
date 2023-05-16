@@ -1,5 +1,5 @@
 import Direction from "./Direction.mjs";
-import PressedKey from "./PressedKey.mjs";
+import PressedKeyDirection from "./PressedKeyDirection.mjs";
 
 /**
  * This class is a wrapper class for tetrimino that the user controls.
@@ -7,7 +7,7 @@ import PressedKey from "./PressedKey.mjs";
 export default class PlayableTetrimino {
   constructor(tetrimino) {
     this.tetrimino = tetrimino;
-    this.pressedKey = new PressedKey();
+    this.pressedKey = new PressedKeyDirection();
     this.direction;
   }
 
@@ -33,6 +33,7 @@ export default class PlayableTetrimino {
         this.tetrimino.moveRight();
         break;
     }
+    this.pressedKey.setDirectionNone();
   }
 
   /**
